@@ -1,0 +1,20 @@
+# Mac DS_Store Files
+.DS_Store
+
+# PhpStorm project files
+/.idea/
+
+# Project console files
+/bin/
+
+# Composer vendor dir
+/vendor/
+
+# PHP CS Fixer files
+/.php_cs
+/.php_cs.cache
+/.php_cs.dist
+
+# PHPUnit files
+/.phpunit.xml
+/.phpunit.result.cache

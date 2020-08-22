@@ -1,0 +1,39 @@
+{
+  "name": "gideonazure/array_sorter",
+  "description": "This is package for sorting array of numbers and strings",
+  "keywords": ["project", "structure", "sorting", "array", "numbers", "strings"],
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alexey Sl",
+      "email": "gid.azure@gmail.com",
+      "role": "Maintainer"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=7.4"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.0",
+    "friendsofphp/php-cs-fixer": "^2.16"
+  },
+  "autoload": {
+    "psr-4": {
+      "Library\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Library\\Test\\": "tests/"
+    }
+  },
+  "scripts": {
+    "cs-check": "php-cs-fixer fix --allow-risky=yes --diff --ansi --dry-run",
+    "cs-fix": "php-cs-fixer fix --allow-risky=yes --diff --ansi"
+  },
+  "config": {
+    "sort-packages": true
+  }
+}
