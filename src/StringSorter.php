@@ -3,15 +3,18 @@
 
 namespace ArraySorter;
 
-use ArraySorter\ValidDataException as ValidDataException;
-use ArraySorter\ValidArrayTypeException as ValidArrayException;
+use ArraySorter\Exception\ValidDataException as ValidDataException;
+use ArraySorter\Exception\ValidArrayTypeException as ValidArrayException;
 
 class StringSorter
 {
     private $direction;
 
     /**
-     * @param mixed $direction
+     *
+     * Setter that sets a parameter as an instance of a class that implements a certain direction of sorting
+     *
+     * @param mixed $direction Instance of a class that implements sorting
      */
     public function setDirection(ArraySorterInterface $direction)
     {
@@ -20,10 +23,13 @@ class StringSorter
 
 
     /**
-     * @param $array
-     * @return mixed
-     * @throws ValidArrayTypeException
-     * @throws ValidDataException
+     *
+     * Implementing a call to the sort method on an instance of the class set to the $direction variable
+     *
+     * @param array $array  The array to be sorted
+     * @return mixed The resulting array after sorting
+     * @throws ValidArrayException Exception in case of incorrect array type
+     * @throws ValidDataException Exception in case of incorrect data type
      */
     public function sort($array){
         $this->validateArray($array);
@@ -32,9 +38,12 @@ class StringSorter
 
 
     /**
+     *
+     * Method implementing input data validation
+     *
      * @param $data
-     * @throws ValidArrayTypeException
-     * @throws ValidDataException
+     * @throws ValidArrayException Exception in case of incorrect array type
+     * @throws ValidDataException Exception in case of incorrect data type
      */
     private function validateArray($data){
         $firstElem = $data[0];

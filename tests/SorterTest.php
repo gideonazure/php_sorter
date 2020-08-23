@@ -9,8 +9,8 @@ use \ArraySorter\DescStringArraySorter;
 use \ArraySorter\NumericSorter;
 use \ArraySorter\AscNumericArraySorter;
 use \ArraySorter\DescNumericArraySorter;
-use \ArraySorter\ValidArrayTypeException;
-use \ArraySorter\ValidDataException;
+use \ArraySorter\Exception\ValidArrayTypeException;
+use \ArraySorter\Exception\ValidDataException;
 
 $numericArray = [1,33, 3, 75, 21, 4, 124, 6];
 $stringArray = ['a', 'f', 'b', 'h', 'd', 'e'];
@@ -29,9 +29,9 @@ try {
     print_r($numericAsc);
 
 } catch (ValidDataException $e){
-    $e->getMessage();
+    echo $e->getMessage() . \PHP_EOL; 
 } catch (ValidArrayTypeException $e) {
-    $e->getMessage();
+    echo $e->getMessage() . \PHP_EOL; 
 }
 
 
@@ -44,9 +44,9 @@ try {
     print_r($numericDesc);
 
 } catch (ValidDataException $e){
-    $e->getMessage();
+    echo $e->getMessage() . \PHP_EOL; 
 } catch (ValidArrayTypeException $e) {
-    $e->getMessage();
+    echo $e->getMessage() . \PHP_EOL; 
 }
 
 
@@ -63,9 +63,9 @@ try {
     print_r($stringAsc);
 
 } catch (ValidDataException $e){
-    $e->getMessage();
+    echo $e->getMessage() . \PHP_EOL; 
 } catch (ValidArrayTypeException $e) {
-    $e->getMessage();
+    echo $e->getMessage() . \PHP_EOL; 
 }
 
 
@@ -78,9 +78,9 @@ try {
     print_r($stringDesc);
 
 } catch (ValidDataException $e){
-    $e->getMessage();
+    echo $e->getMessage() . \PHP_EOL; 
 } catch (ValidArrayTypeException $e) {
-    $e->getMessage();
+    echo $e->getMessage() . \PHP_EOL; 
 }
 
 echo \PHP_EOL . \PHP_EOL . 'Exception examples:' . \PHP_EOL;
@@ -95,9 +95,9 @@ try {
     print_r($wrongArray);
 
 } catch (ValidDataException $e){
-    $e->getMessage();
+    echo $e->getMessage() . \PHP_EOL; 
 } catch (ValidArrayTypeException $e) {
-    $e->getMessage();
+    echo $e->getMessage() . \PHP_EOL; 
 }
 
 
@@ -110,7 +110,7 @@ try {
     print_r($wrongData);
 
 } catch (ValidDataException $e){
-    $e->getMessage();
+    echo $e->getMessage() . \PHP_EOL; 
 } catch (ValidArrayTypeException $e) {
-    $e->getMessage();
+    echo $e->getMessage() . \PHP_EOL; 
 }

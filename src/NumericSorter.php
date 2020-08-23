@@ -3,8 +3,8 @@
 
 namespace ArraySorter;
 
-use ArraySorter\ValidDataException as ValidDataException;
-use ArraySorter\ValidArrayTypeException as ValidArrayException;
+use ArraySorter\Exception\ValidDataException as ValidDataException;
+use ArraySorter\Exception\ValidArrayTypeException as ValidArrayException;
 
 class NumericSorter
 {
@@ -28,8 +28,8 @@ class NumericSorter
      *
      * @param array $array  The array to be sorted
      * @return mixed The resulting array after sorting
-     * @throws ValidArrayTypeException Exception in case of incorrect array type
-     * @throws \ArraySorter\ValidDataException
+     * @throws ValidArrayException Exception in case of incorrect array type
+     * @throws ValidDataException Exception in case of incorrect data type
      */
     public function sort($array){
         $this->validateArray($array);
@@ -38,9 +38,12 @@ class NumericSorter
 
 
     /**
+     *
+     * Method implementing input data validation
+     *
      * @param $data
-     * @throws ValidArrayTypeException
-     * @throws ValidDataException
+     * @throws ValidArrayException Exception in case of incorrect array type
+     * @throws ValidDataException Exception in case of incorrect data type
      */
     private function validateArray($data){
         $firstElem = $data[0];

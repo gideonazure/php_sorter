@@ -18,51 +18,59 @@ composer require gideonazure/array_sorter
 
 ```php
 // require needed class to your project
-use Serialize\SerializeJson;
-use Serialize\SerializeYaml;
-use Serialize\SerializeXml;
+use \ArraySorter\StringSorter;
+use \ArraySorter\AscStringArraySorter;
+use \ArraySorter\DescStringArraySorter;
+use \ArraySorter\NumericSorter;
+use \ArraySorter\AscNumericArraySorter;
+use \ArraySorter\DescNumericArraySorter;
+use \ArraySorter\Exception\ValidArrayTypeException;
+use \ArraySorter\Exception\ValidDataException;
 
-// create instance of a class
-// with specifying the format of the final data as a class property
+// Create instance of a class...
 
-// for JSON output data
-$JSON = new SerializeJson(); 
+// ...for sort numeric array data
+$numeric = new NumericSorter();
 
-// for YAML output data
-$YAML = new SerializeYaml(); 
-
-// for XML output data
-$XML = new SerializeXml();
+// ...for sort strings array data
+$string = new StringSorter();
 
 
+// set an instance of a class implementing sort direction as a property for numeric arrays
+$numeric->setDirection(new AscNumericArraySorter()); // for ascending sorting
+$numeric->setDirection(new DescNumericArraySorter()); // for descending sorting
 
-// and then call  "serialize" method of instance 
-// with passing data object
+// set an instance of a class implementing sort direction as a property for strings arrays
+$string->setDirection(new AscStringArraySorter()); // for ascending sorting
+$string->setDirection(new DescStringArraySorter()); // for descending sorting
 
-// return class object in JSON format
-$JSON->serilalize(/* class object */);
 
-// return class object in YAML format
-$YAML->serilalize(/* class object */);
+// and then call  "sort" method of instance 
+// with passing array data
 
-// return class object in XML format
-$XML->serilalize(/* class object */);
+// return numeric arrays
+$result = $numeric->sort(/* numeric array data */);
+
+// return strings array
+$result = $string->sort(/* strings array data  */);
 
 
 // if need catch errors and return message use try->catch construction:
 try {
-    $JSON->serilalize(/* class object */);
-} catch (\Exception $e){
-    echo $e->getMessage();
+    $result = $string->sort($stringArray);
+} catch (ValidDataException $e){
+    echo $e->getMessage(); 
+} catch (ValidArrayTypeException $e) {
+    echo $e->getMessage(); 
 }
 
 ```
 
 ## Demo
-For demo use and check the functionality - run the file "SerializeTester.php" from the "/tests" folder
+For demo use and check the functionality - run the file "SorterTest.php" from the "/tests" folder
 
 ```bash
-php SerializeTester.php
+php SorterTest.php
 ```
 
 
