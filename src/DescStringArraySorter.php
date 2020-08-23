@@ -12,16 +12,16 @@ class DescStringArraySorter implements ArraySorterInterface
 {
 
     /**
-     *
      * A method that implements descending sorting
      *
      * @param array $array Array data to sort
+     *
      * @return array Sorted array
      */
     public function sort($array)
     {
-        rsort($array, SORT_STRING);
+        \rsort($array, SORT_STRING);
+
         return $array;
     }
-
 }
