@@ -18,3 +18,4 @@
 # PHPUnit files
 /.phpunit.xml
 /.phpunit.result.cache
+/phpunit.xml.dist

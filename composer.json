@@ -21,12 +21,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Library\\": "src/"
+      "ArraySorter\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Library\\Test\\": "tests/"
+      "ArraySorter\\": "tests/"
     }
   },
   "scripts": {
