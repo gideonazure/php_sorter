@@ -27,7 +27,7 @@ try {
 
     echo \PHP_EOL . 'ASC numeric array:' . \PHP_EOL;
     \print_r($numericAsc);
-} catch (ValidDataException $e) {
+} catch (TypeError $e) {
     echo $e->getMessage() . \PHP_EOL;
 } catch (ValidArrayTypeException $e) {
     echo $e->getMessage() . \PHP_EOL;
@@ -41,7 +41,7 @@ try {
 
     echo \PHP_EOL . 'DESC numeric array:' . \PHP_EOL;
     \print_r($numericDesc);
-} catch (ValidDataException $e) {
+} catch (TypeError $e) {
     echo $e->getMessage() . \PHP_EOL;
 } catch (ValidArrayTypeException $e) {
     echo $e->getMessage() . \PHP_EOL;
@@ -59,7 +59,7 @@ try {
 
     echo \PHP_EOL . 'ASC string array:' . \PHP_EOL;
     \print_r($stringAsc);
-} catch (ValidDataException $e) {
+} catch (TypeError $e) {
     echo $e->getMessage() . \PHP_EOL;
 } catch (ValidArrayTypeException $e) {
     echo $e->getMessage() . \PHP_EOL;
@@ -73,7 +73,7 @@ try {
 
     echo \PHP_EOL . 'DESC string array' . \PHP_EOL;
     \print_r($stringDesc);
-} catch (ValidDataException $e) {
+} catch (TypeError $e) {
     echo $e->getMessage() . \PHP_EOL;
 } catch (ValidArrayTypeException $e) {
     echo $e->getMessage() . \PHP_EOL;
@@ -89,7 +89,7 @@ try {
 
     echo \PHP_EOL . 'Wrong array type:' . \PHP_EOL;
     \print_r($wrongArray);
-} catch (ValidDataException $e) {
+} catch (TypeError $e) {
     echo $e->getMessage() . \PHP_EOL;
 } catch (ValidArrayTypeException $e) {
     echo $e->getMessage() . \PHP_EOL;
@@ -103,7 +103,7 @@ try {
 
     echo \PHP_EOL . 'Wrong passed data' . \PHP_EOL;
     \print_r($wrongData);
-} catch (ValidDataException $e) {
+} catch (TypeError $e) {
     echo $e->getMessage() . \PHP_EOL;
 } catch (ValidArrayTypeException $e) {
     echo $e->getMessage() . \PHP_EOL;
