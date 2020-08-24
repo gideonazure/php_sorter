@@ -31,7 +31,7 @@ class NumericSorter
      *
      * @return mixed The resulting array after sorting
      */
-    public function sort($array)
+    public function sort(array $array) : array
     {
         $this->validateArray($array);
 

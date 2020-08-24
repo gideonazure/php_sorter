@@ -3,12 +3,8 @@
 
 namespace ArraySorter;
 
-/**
- * Interface for classes implementing methods for sorting arrays
- *
- * @package ArraySorter
- */
+/** Interface for classes implementing methods for sorting arrays */
 interface ArraySorterInterface
 {
-    public function sort($array);
+    public function sort(array $array) : array;
 }

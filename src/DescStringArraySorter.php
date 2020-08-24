@@ -18,7 +18,7 @@ class DescStringArraySorter implements ArraySorterInterface
      *
      * @return array Sorted array
      */
-    public function sort($array)
+    public function sort(array $array) : array
     {
         \rsort($array, SORT_STRING);
 

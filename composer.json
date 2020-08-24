@@ -21,8 +21,7 @@
   },
   "autoload": {
     "psr-4": {
-      "ArraySorter\\": "src/",
-      "ArraySorter\\Exception\\": "src/Exceptions/"
+      "ArraySorter\\": "src/"
     }
   },
   "autoload-dev": {
